@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
 const {
   Content,
-  frontmatter: { title, author },
+  frontmatter: { title, author, date },
 } = Astro.props.post;
 ---
 
@@ -23,7 +23,11 @@ const {
       <Card>
         <a class='btn' href='/blog'>Go back</a>
         <h2>{title}</h2>
-        <div>Written by {author}</div>
+        <div>
+          Written by <strong>{author}</strong> on {
+            new Date(date).toLocaleDateString()
+          }
+        </div>
         <Content />
       </Card>
     </div>
