@@ -20,7 +20,10 @@ const featuresData = [
   <div class='container'>
     {
       featuresData.map(feature => (
-        <Card title={feature.title} body={feature.body} />
+        <Card>
+          <h2>{feature.title}</h2>
+          <p>{feature.body}</p>
+        </Card>
       ))
     }
   </div>
@@ -33,6 +36,10 @@ const featuresData = [
     grid-gap: 20px;
     padding: 0 20px;
     margin: 30px auto;
+  }
+
+  h2 {
+    font-weight: 700;
   }
 
   @media (max-width: 700px) {

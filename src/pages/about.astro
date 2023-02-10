@@ -1,5 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+import logos from '../images/deploy-logos.png';
+import smallLogos from '../images/deploy-logos-small.png';
 ---
 
 <Layout title='About Astro'>
@@ -21,8 +25,7 @@ import Layout from '../layouts/Layout.astro';
         quas dolorem tempore? Recusandae repudiandae magnam quae doloribus
         impedit.
       </p>
-
-      <div class='card'>
+      <Card dark={true}>
         <h3>Use the tools you already love</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ipsum
@@ -32,11 +35,11 @@ import Layout from '../layouts/Layout.astro';
           laborum impedit nesciunt ut voluptatum assumenda aspernatur libero
           iusto error molestias dolorum, necessitatibus labore?
         </p>
-      </div>
+      </Card>
 
       <h3>Deploy to anywhere, even the edge</h3>
-      <img class='logos' src='img/deploy-logos.png' alt='' />
-      <img class='logos-small' src='img/deploy-logos-small.png' alt='' />
+      <img class='logos' src={logos} alt='logos' />
+      <img class='logos-small' src={smallLogos} alt='small logos' />
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde doloribus,
         vel ipsum mollitia aliquid cumque commodi corrupti omnis ipsam sit
@@ -59,3 +62,5 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 </Layout>
+
+<style></style>
