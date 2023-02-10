@@ -7,10 +7,7 @@ const posts = await Astro.glob('../content/posts/*.md');
 ---
 
 <Layout title='Astro Blog'>
-  <Showcase
-    heading='Astro Blog'
-    text="Here's where you can learn not too much about Astro!"
-  />
+  <Showcase heading='Astro Blog' text='A simple blog built with Astro' />
   <section class='page-content'>
     <div class='container'>
       {
@@ -18,6 +15,9 @@ const posts = await Astro.glob('../content/posts/*.md');
           <Card>
             <h3>{post.frontmatter.title}</h3>
             <p>{post.frontmatter.excerpt}</p>
+            <a href={`/blog/posts/${post.frontmatter.slug}`} class='btn'>
+              Read More
+            </a>
           </Card>
         ))
       }
